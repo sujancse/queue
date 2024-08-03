@@ -10,36 +10,36 @@ type Queue[T any] struct {
 	last  *node[T]
 }
 
-func (s *Queue[T]) Add(data T) {
+func (q *Queue[T]) Add(data T) {
 	t := &node[T]{
 		data: data,
 		next: nil,
 	}
 
-	if s.last == nil {
-		s.last = t
-		s.first = t
+	if q.last == nil {
+		q.last = t
+		q.first = t
 	} else {
-		s.last.next = t
-		s.last = s.last.next
+		q.last.next = t
+		q.last = q.last.next
 	}
 }
 
-func (s *Queue[T]) Remove() T {
-	data := s.first.data
-	s.first = s.first.next
+func (q *Queue[T]) Remove() T {
+	data := q.first.data
+	q.first = q.first.next
 
-	if s.first == nil {
-		s.last = nil
+	if q.first == nil {
+		q.last = nil
 	}
 
 	return data
 }
 
-func (s *Queue[T]) Peek() T {
-	return s.first.data
+func (q *Queue[T]) Peek() T {
+	return q.first.data
 }
 
-func (s *Queue[T]) IsEmpty() bool {
-	return s.first == nil
+func (q *Queue[T]) IsEmpty() bool {
+	return q.first == nil
 }
