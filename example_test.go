@@ -3,41 +3,41 @@ package queue
 import "fmt"
 
 func ExampleQueue_Add() {
-	s := Queue[int]{}
-	s.Add(1)
-	s.Add(2)
-	s.Add(3)
+	q := Queue[int]{}
+	q.Add(1)
+	q.Add(2)
+	q.Add(3)
 }
 
 func ExampleQueue_Remove() {
-	s := Queue[int]{}
-	s.Add(1)
-	s.Add(2)
+	q := Queue[int]{}
+	q.Add(1)
+	q.Add(2)
 
-	fmt.Println(s.Remove())
+	fmt.Println(q.Remove())
 	// Output: 1
 }
 
 func ExampleQueue_Peek() {
-	s := Queue[int]{}
-	s.Add(1)
-	s.Add(2)
+	q := Queue[int]{}
+	q.Add(1)
+	q.Add(2)
 
-	fmt.Println(s.Peek())
+	fmt.Println(q.Peek())
 	// Output: 1
 }
 
 func ExampleQueue_IsEmpty() {
-	s := Queue[int]{}
-	s.Add(1)
-	s.Add(2)
+	q := Queue[int]{}
+	q.Add(1)
+	q.Add(2)
 
-	fmt.Println(s.IsEmpty())
+	fmt.Println(q.IsEmpty())
 	// Output: false
 
-	s.Remove()
-	s.Remove()
+	q.Remove()
+	q.Remove()
 
-	fmt.Println(s.IsEmpty())
+	fmt.Println(q.IsEmpty())
 	// Output: true
 }
